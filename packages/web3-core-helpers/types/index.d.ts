@@ -75,6 +75,14 @@ export class errors {
     static ContractCodeNotStoredError(receipt: object): TransactionError
     static TransactionRevertedWithoutReasonError(receipt: object): TransactionError
     static TransactionOutOfGasError(receipt: object): TransactionError
+    static ContractMissingABIError(): Error
+    static ContractOnceRequiresCallbackError(): Error
+    static ContractEventDoesNotExistError(eventName: string): Error
+    static ContractUnsetContractAddressError(): Error
+    static ContractReservedEventError(type: string): Error
+    static ContractMissingDeployDataError(): Error
+    static ContractMissingToAddressError(): Error
+    static ContractMissingFromAddressError(): Error
 }
 
 export class WebsocketProviderBase {

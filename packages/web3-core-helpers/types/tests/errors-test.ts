@@ -42,3 +42,27 @@ errors.RevertInstructionError('reason', 'signature');
 
 // $ExpectType TransactionRevertInstructionError
 errors.TransactionRevertInstructionError('reason', 'signature', {});
+
+// $ExpectType Error
+errors.ContractMissingABIError();
+
+// $ExpectType Error
+errors.ContractOnceRequiresCallbackError();
+
+// $ExpectType Error
+errors.ContractEventDoesNotExistError('nonEvent');
+
+// $ExpectType Error
+errors.ContractUnsetContractAddressError();
+
+// $ExpectType Error
+errors.ContractReservedEventError('newListener');
+
+// $ExpectType Error
+errors.ContractMissingDeployDataError();
+
+// $ExpectType Error
+errors.ContractMissingToAddressError();
+
+// $ExpectType Error
+errors.ContractMissingFromAddressError();

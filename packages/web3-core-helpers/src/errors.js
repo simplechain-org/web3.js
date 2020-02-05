@@ -76,5 +76,29 @@ module.exports = {
     },
     TransactionOutOfGasError: function(receipt) {
         return this.TransactionError('Transaction ran out of gas. Please provide more gas:\n' + JSON.stringify(receipt, null, 2), receipt);
+    },
+    ContractMissingABIError: function() {
+        return new Error('You must provide the json interface of the contract when instantiating a contract object.');
+    },
+    ContractOnceRequiresCallbackError: function() {
+        return new Error('Once requires a callback as the second parameter.');
+    },
+    ContractEventDoesNotExistError: function(eventName) {
+        return new Error('Event "' + eventName + '" doesn\'t exist in this contract.');
+    },
+    ContractUnsetContractAddressError: function() {
+        return new Error('This contract object doesn\'t have address set yet, please set an address first.');
+    },
+    ContractReservedEventError: function(type) {
+        return new Error('The event "'+ type +'" is a reserved event name, you can\'t use it.');
+    },
+    ContractMissingDeployDataError: function() {
+        return new Error('No "data" specified in neither the given options, nor the default options.');
+    },
+    ContractMissingToAddressError: function() {
+        return new Error('This contract object doesn\'t have address set yet, please set an address first.');
+    },
+    ContractMissingFromAddressError: function() {
+        return new Error('No "from" address specified in neither the given options, nor the default options.');
     }
 };
