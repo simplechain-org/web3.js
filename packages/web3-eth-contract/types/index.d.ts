@@ -46,7 +46,9 @@ export class Contract {
 
     deploy(options: DeployOptions): ContractSendMethod;
 
-    methods: any;
+    methods: {
+        [key: string]: ContractSendMethod;
+    };
 
     once(
         event: string,
