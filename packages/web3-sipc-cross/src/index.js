@@ -350,6 +350,36 @@ var Cross = function Cross() {
             call: 'eth_ctxContentByPage',
             params: 4,
         }),
+        new Method({
+            name: 'ctxGet',
+            call: 'eth_ctxGet',
+            params: 1,
+        }),
+        new Method({
+            name: 'ctxGetByNumber',
+            call: 'eth_ctxGetByNumber',
+            params: 2,
+        }),
+        new Method({
+            name: 'ctxQueryDestValue',
+            call: 'eth_ctxQueryDestValue',
+            params: 3,
+        }),
+        new Method({
+            name: 'getCtxTakerByPage',
+            call: 'eth_ctxTakerByPage',
+            params: 3,
+        }),
+        new Method({
+            name: 'getCtxStats',
+            call: 'eth_ctxStats',
+            params: 0,
+        }),
+        new Method({
+            name: 'getPoolStats',
+            call: 'eth_poolStats',
+            params: 0,
+        }),
         // subscriptions
         new Subscriptions({
             name: 'subscribe',

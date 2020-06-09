@@ -128,6 +128,38 @@ export class Cross {
         callback?: (error: Error, result: ICrossCtxObject) => void
     ): Promise<ICrossCtxObject>;
 
+    ctxGet(
+        ctxId: string,
+        callback?: (error: Error, result: ICrossContent) => void
+    ): Promise<ICrossContent>;
+
+    ctxGetByNumber(
+        begin: string,
+        eng: string,
+        callback?: (error: Error, result: ICrossCtxGetStates) => void
+    ): Promise<ICrossCtxGetStates>;
+
+    ctxQueryDestValue(
+        value: string,
+        pageSize: string,
+        startPage: string,
+        callback?: (error: Error, result: ICrossCtxPage) => void
+    ): Promise<ICrossCtxPage>;
+
+    getCtxTakerByPage(
+        address: string,
+        pageSize: string,
+        startPage: string,
+        callback?: (error: Error, result: ICrossCtxPage) => void
+    ): Promise<ICrossCtxPage>;
+
+    getCtxStats(
+        callback?: (error: Error, result: ICrossCtxStats) => void
+    ): Promise<ICrossCtxStats>;
+
+    getPoolStats(
+        callback?: (error: Error, result: ICrossPoolStats) => void
+    ): Promise<ICrossPoolStats>;
 }
 
 export interface Syncing {
@@ -215,4 +247,22 @@ export interface ICrossContent {
     v: string[],
     r: string[],
     s: string[]
+}
+
+export interface ICrossCtxGetStates {
+    executing?: string[] | number,
+    executed?: string[] | number,
+    finishing?: string[] | number,
+    finished?: string[] | number,
+    pending?: string[] | number,
+    waiting?: string[] | number
+}
+
+export interface ICrossCtxStats {
+ [chainId: string]: ICrossCtxGetStates
+}
+
+export interface ICrossPoolStats {
+    pending: number,
+    queue: number
 }
