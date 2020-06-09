@@ -60,7 +60,7 @@ export {
     chain
 } from 'web3-core';
 
-export class Sipc {
+export class Cross {
     constructor();
     constructor(provider: provider);
     constructor(provider: provider, net: net.Socket);
@@ -377,6 +377,36 @@ export class Sipc {
 
     requestAccounts(): Promise<string[]>
     requestAccounts(callback: (error: Error, result: string[]) => void): Promise<string[]>
+
+    getCtxQuery(
+        transactionHash: string,
+        callback?: (error: Error, result: ICrossContent) => void
+    ): Promise<ICrossContent>;
+
+    getCtxOwner(
+        address: string,
+        callback?: (error: Error, result: ICrossCtxObject) => void
+    ): Promise<ICrossCtxObject>;
+
+    getCtxOwnerByPage(
+        address: string,
+        pageSize: number,
+        startPage: number,
+        callback?: (error: Error, result: ICrossCtxPage) => void
+    ): Promise<ICrossCtxPage>;
+
+    getCtxContent(
+        callback?: (error: Error, result: ICrossCtxObject) => void
+    ): Promise<ICrossCtxObject>;
+
+    getCtxContentByPage(
+        localSize: number,
+        localPage: number,
+        remoteSize: number,
+        remotePage: number,
+        callback?: (error: Error, result: ICrossCtxObject) => void
+    ): Promise<ICrossCtxObject>;
+
 }
 
 export interface Syncing {
@@ -438,4 +468,30 @@ export interface StorageProof {
     key: string;
     value: string;
     proof: string[];
+}
+
+export interface ICrossCtxObject {
+    local: {[chainId: string]: ICrossContent[]} | ICrossCtxPage;
+    remote?: {[chainId: string]: ICrossContent[]} | ICrossCtxPage;
+}
+
+export interface ICrossCtxPage {
+    data: {[chainId: string]: ICrossContent[]};
+    total: number;
+}
+
+export interface ICrossContent {
+    value: string,
+    ctxId: string,
+    status?: string,
+    txHash: string,
+    from: string,
+    to: string,
+    blockHash: string,
+    destinationId: string,
+    destinationValue: string,
+    input: string,
+    v: string[],
+    r: string[],
+    s: string[]
 }

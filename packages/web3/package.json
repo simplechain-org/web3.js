@@ -1,6 +1,6 @@
 {
     "name": "web3-sipc",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "Ethereum JavaScript API",
     "repository": "https://github.com/ethereum/web3.js",
     "license": "LGPL-3.0",
@@ -55,7 +55,7 @@
         "web3-eth-personal": "1.2.8",
         "web3-net": "1.2.8",
         "web3-shh": "1.2.8",
-        "web3-sipc-cross": "^1.0.0",
+        "web3-sipc-cross": "^1.0.3",
         "web3-utils": "1.2.8"
     },
     "devDependencies": {

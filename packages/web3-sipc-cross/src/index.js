@@ -62,7 +62,7 @@ var uncleCountCall = function (args) {
 };
 
 
-var Sipc = function Sipc() {
+var Cross = function Cross() {
     var _this = this;
 
     // sets _requestmanager
@@ -558,7 +558,31 @@ var Sipc = function Sipc() {
             params: 0,
             outputFormatter: formatter.outputTransactionFormatter
         }),
-
+        new Method({
+            name: 'getCtxQuery',
+            call: 'eth_ctxQuery',
+            params: 1
+        }),
+        new Method({
+            name: 'getCtxOwner',
+            call: 'eth_ctxOwner',
+            params: 1,
+        }),
+        new Method({
+            name: 'getCtxOwnerByPage',
+            call: 'eth_ctxOwnerByPage',
+            params: 3,
+        }),
+        new Method({
+            name: 'getCtxContent',
+            call: 'eth_ctxContent',
+            params: 0,
+        }),
+        new Method({
+            name: 'getCtxContentByPage',
+            call: 'eth_ctxContentByPage',
+            params: 4,
+        }),
         // subscriptions
         new Subscriptions({
             name: 'subscribe',
@@ -654,8 +678,8 @@ var Sipc = function Sipc() {
 };
 
 // Adds the static givenProvider and providers property to the Eth module
-core.addProviders(Sipc);
+core.addProviders(Cross);
 
 
-module.exports = Sipc;
+module.exports = Cross;
 
