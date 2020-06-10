@@ -25,7 +25,7 @@ import { Personal } from 'web3-eth-personal';
 import { Network } from 'web3-net';
 import { Shh } from 'web3-shh';
 import { Utils } from 'web3-utils';
-import {Cross} from "web3-sipc-cross";
+import {Cross} from "sipc-web3-cross";
 
 export default class Web3 {
     constructor();

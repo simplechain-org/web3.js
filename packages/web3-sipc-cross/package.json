@@ -1,6 +1,6 @@
 {
-    "name": "web3-sipc-cross",
-    "version": "1.0.6",
+    "name": "sipc-web3-cross",
+    "version": "0.0.7",
     "description": "Web3 module to interact with the simpleChain blockchain and cross api.",
     "license": "LGPL-3.0",
     "engines": {
@@ -11,7 +11,7 @@
         "dtslint": "dtslint --localTs node_modules/typescript/lib  types"
     },
     "publishConfig": {
-        "registry": "http://www.crainty.com:4873"
+        "registry": "https://registry.npmjs.org/"
     },
     "main": "src/index.js",
     "dependencies": {

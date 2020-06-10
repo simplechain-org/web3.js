@@ -1,19 +1,9 @@
-# web3-eth
-
-[![NPM Package][npm-image]][npm-url] [![Dependency Status][deps-image]][deps-url] [![Dev Dependency Status][deps-dev-image]][deps-dev-url]
-
-This is a sub-package of [web3.js][repo].
-
-This Eth package is used within some [web3.js][repo] package.
-
-Please read the [documentation][docs] for more.
-
 ## Installation
-
+forked from ethereum/web3-eth, add simpleChain cross transaction api
 ### Node.js
 
 ```bash
-npm install web3-eth
+npm install sipc-web3-cross
 ```
 
 ### In the Browser
@@ -31,9 +21,11 @@ This will expose the `Web3Eth` object on the window object.
 
 ```js
 // in node.js
-var Web3Eth = require('web3-eth');
+var Web3SIPC = require('sipc-web3-cross');
 
-var eth = new Web3Eth('ws://localhost:8546');
+var cross = new Web3SIPC('ws://localhost:8546');
+
+cross.getCtxStats();
 ```
 
 ## Types
