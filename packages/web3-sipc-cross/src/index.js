@@ -327,57 +327,57 @@ var Cross = function Cross() {
     var methods = [
         new Method({
             name: 'getCtxQuery',
-            call: 'eth_ctxQuery',
+            call: 'cross_ctxQuery',
             params: 1
         }),
         new Method({
             name: 'getCtxOwner',
-            call: 'eth_ctxOwner',
+            call: 'cross_ctxOwner',
             params: 1,
         }),
         new Method({
             name: 'getCtxOwnerByPage',
-            call: 'eth_ctxOwnerByPage',
+            call: 'cross_ctxOwnerByPage',
             params: 3,
         }),
         new Method({
             name: 'getCtxContent',
-            call: 'eth_ctxContent',
+            call: 'cross_ctxContent',
             params: 0,
         }),
         new Method({
             name: 'getCtxContentByPage',
-            call: 'eth_ctxContentByPage',
+            call: 'cross_ctxContentByPage',
             params: 4,
         }),
         new Method({
             name: 'ctxGet',
-            call: 'eth_ctxGet',
+            call: 'cross_ctxGet',
             params: 1,
         }),
         new Method({
             name: 'ctxGetByNumber',
-            call: 'eth_ctxGetByNumber',
+            call: 'cross_ctxGetByNumber',
             params: 2,
         }),
         new Method({
             name: 'ctxQueryDestValue',
-            call: 'eth_ctxQueryDestValue',
+            call: 'cross_ctxQueryDestValue',
             params: 3,
         }),
         new Method({
             name: 'getCtxTakerByPage',
-            call: 'eth_ctxTakerByPage',
+            call: 'cross_ctxTakerByPage',
             params: 3,
         }),
         new Method({
             name: 'getCtxStats',
-            call: 'eth_ctxStats',
+            call: 'cross_ctxStats',
             params: 0,
         }),
         new Method({
             name: 'getPoolStats',
-            call: 'eth_poolStats',
+            call: 'cross_poolStats',
             params: 0,
         }),
         // subscriptions

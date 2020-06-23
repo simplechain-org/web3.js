@@ -1,6 +1,6 @@
 {
     "name": "@sipc/web3",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "forked from ethereum/web3.js, add simpleChain cross transaction api",
     "license": "LGPL-3.0",
     "engines": {
